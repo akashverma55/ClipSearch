@@ -1,0 +1,32 @@
+# --- General ---
+.DS_Store
+.vscode/
+.idea/
+*.log
+
+# --- Python Backend ---
+Backend/__pycache__/
+Backend/venv/
+Backend/env/
+Backend/uploads/*
+!Backend/uploads/.gitkeep
+Backend/chroma_db/
+
+# --- Flutter Frontend ---
+Frontend/.dart_tool/
+Frontend/.flutter-plugins
+Frontend/.flutter-plugins-dependencies
+Frontend/.packages
+Frontend/build/
+
+# --- SENSITIVE DATA (IMPORTANT) ---
+# This hides your Gemini API keys
+.env
+.env.local
+**/api_key_checker.py
+
+# Python cache
+__pycache__/
+*.pyc
+**/*.pyc
+Backend/services/__pycache__/

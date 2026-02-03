@@ -1,0 +1,6 @@
+flask==3.0.0
+flask-cors==4.0.0
+google-generativeai==0.3.2
+chromadb==0.4.22
+python-dotenv==1.0.0
+yt-dlp==2023.12.30

@@ -23,7 +23,7 @@ class VideoRepository {
     }
   }
 
-  Future<UploadResponseModel> uploadYoutubeVideo({required String url, int interval = 10}) async{
+  Future<UploadResponseModel> uploadYouTubeVideo({required String url, int interval = 10}) async{
     try{
       final response = await dioClient.post(ApiConstants.uploadYoutube, data: {'url':url,'interval':interval});
       return UploadResponseModel.fromJson(response.data);

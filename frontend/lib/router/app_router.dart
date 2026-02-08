@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:frontend/core/constants/api_constants.dart';
-import 'package:frontend/presentation/bloc/video/video_bloc.dart';
 import 'package:frontend/presentation/screens/error_screen.dart';
+import 'package:frontend/presentation/screens/test.dart';
 import 'package:go_router/go_router.dart';
 import 'package:frontend/presentation/screens/home_screen.dart';
 import 'package:frontend/presentation/screens/upload_screen.dart';
@@ -22,6 +22,7 @@ class AppRouter {
         name: 'home',
         pageBuilder: (context, state) => MaterialPage(
           key: state.pageKey,
+          // child: const YouTubePlayerScreen(videoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",)
           child: const HomeScreen()
         )
       ),
@@ -42,7 +43,7 @@ class AppRouter {
         name: 'videoList',
         pageBuilder:(context, state) => MaterialPage(
           key: state.pageKey,
-          child: const VideoListScreen();
+          child: const VideoListScreen()
         ),
       ),
 
@@ -67,7 +68,7 @@ class AppRouter {
           final videoId = state.uri.queryParameters['videoId']??'';
           final timestampStr = state.uri.queryParameters['timestamp']??'0';
           final timestamp = double.tryParse(timestampStr)??0.0;
-          final videosource = state.uri.queryParameters['videoSource']??'';
+          final videoSource = state.uri.queryParameters['videoSource']??'';
           final videoType = state.uri.queryParameters['videoType']??'';
 
           return MaterialPage(
@@ -76,9 +77,9 @@ class AppRouter {
               videoId: videoId,
               timestamp: timestamp,
               videoType: videoType,
-              videosource: videosource
+              videoSource: videoSource
             )
-          )
+          );
         },
       )
     ],

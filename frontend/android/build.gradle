@@ -1,3 +1,17 @@
+buildscript {
+    ext.kotlin_version = '2.2.0' // Updated from 1.8.0 to fix Kotlin errors
+    repositories {
+        google()
+        mavenCentral()
+    }
+
+    dependencies {
+        // Updated to 8.2.1 to handle Java 21 compatibility
+        classpath 'com.android.tools.build:gradle:8.2.1'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
 allprojects {
     repositories {
         google()
